@@ -245,3 +245,8 @@ install(DIRECTORY src/zmqpp DESTINATION include/
 install(FILES
         "${CMAKE_CURRENT_BINARY_DIR}/zmqpp_export.h"
         DESTINATION "include")
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
+        $<INSTALL_INTERFACE:include>
+        )
